@@ -23,7 +23,7 @@ public class Colum : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("+1");
+            //Debug.Log("+1");
         }
     }
 
