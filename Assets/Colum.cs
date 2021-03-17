@@ -7,16 +7,14 @@ public class Colum : MonoBehaviour
 {
     public float speed = 2.0f;
 
-    private float liveTime = 15.0f;
-    private float createTime = 0f;
     private Text score;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        createTime = Time.time;
         score = GameObject.Find("TextScore").GetComponent<Text>();
+        Destroy(gameObject, 15f);
     }
 
     // Update is called once per frame
@@ -25,11 +23,6 @@ public class Colum : MonoBehaviour
         if (Controller.isOpen) 
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
-
-            if (Time.time - createTime >= liveTime)
-            {
-                Destroy(gameObject);
-            }
         }
     }
 

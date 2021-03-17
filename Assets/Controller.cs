@@ -12,7 +12,10 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = 0;
+        scoreMax = 0;
+        deadNum = 0;
+        isOpen = false;
     }
 
     // Update is called once per frame

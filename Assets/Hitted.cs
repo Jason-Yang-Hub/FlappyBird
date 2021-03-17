@@ -23,7 +23,7 @@ public class Hitted : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (Controller.isOpen && collision.gameObject.tag == "Player")
         {
             Controller.isOpen = false;
             Controller.deadNum += 1;
@@ -35,7 +35,10 @@ public class Hitted : MonoBehaviour
                 scoreMax.text = "ScoreMax:" + Controller.scoreMax;
             }
 
-            GameObject.Find("ButtonPlay").SetActive(true);
+            GameObject btnReset = GameObject.Find("MainView").transform.Find("ButtonReset").gameObject;
+            btnReset.SetActive(true);
+            GameObject btnPause = GameObject.Find("MainView").transform.Find("ButtonPause").gameObject;
+            btnPause.SetActive(false);
         }
     }
 

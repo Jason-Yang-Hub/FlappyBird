@@ -6,7 +6,7 @@ public class SpawnPoint : MonoBehaviour
 {
     public GameObject colum;
 
-    public float coldDown = 2f;
+    public float coldDown = 3f;
 
     float nextTime = 0f;
     
@@ -26,8 +26,18 @@ public class SpawnPoint : MonoBehaviour
             Vector3 p = transform.position;
             p.y = Random.Range(-3f, 3f);
 
-            Instantiate(colum, p,transform.rotation);
+            Instantiate(colum, p,transform.rotation,transform);
         }
         
+    }
+
+    void DestroyAllCloneObject()
+    {
+        int count = transform.childCount;
+
+        for (int i = 0; i < count; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
     }
 }
