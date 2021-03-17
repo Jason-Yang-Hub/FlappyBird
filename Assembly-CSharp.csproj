@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Colum.cs" />
-    <Compile Include="Assets\SpawnPoint.cs" />
-    <Compile Include="Assets\Bird.cs" />
     <Compile Include="Assets\Controller.cs" />
-    <Compile Include="Assets\Hitted.cs" />
     <Compile Include="Assets\MainView.cs" />
+    <Compile Include="Assets\SpawnPoint.cs" />
+    <Compile Include="Assets\Hitted.cs" />
+    <Compile Include="Assets\Bird.cs" />
     <None Include="Assets\Res\atlas.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Program Files/Unity/Editor/2020.3.0f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
