@@ -9,6 +9,7 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+UserSettings/
 Assets/AssetStoreTools*
  
 # ===================================== #
@@ -37,3 +38,5 @@ Icon?
 ehthumbs.db
 Thumbs.db
 /UserSettings
+/UpgradeLog.htm
+/UpgradeLog2.htm
