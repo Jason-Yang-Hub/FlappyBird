@@ -15,19 +15,17 @@ public class MainView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = GameObject.Find("TextScore").GetComponent<Text>();
+        score = transform.Find("TextScore").GetComponent<Text>();
 
-        GameObject mainView = GameObject.Find("MainView");
-
-        btnPlay = mainView.transform.Find("ButtonPlay").gameObject.GetComponent<Button>();
+        btnPlay = transform.Find("ButtonPlay").GetComponent<Button>();
         btnPlay.onClick.AddListener(OnClickButtonPlay);
         btnPlay.gameObject.SetActive(true);
 
-        btnReset = mainView.transform.Find("ButtonReset").gameObject.GetComponent<Button>();
+        btnReset = transform.Find("ButtonReset").GetComponent<Button>();
         btnReset.onClick.AddListener(OnClickButtonReset);
         btnReset.gameObject.SetActive(false);
 
-        btnPause = mainView.transform.Find("ButtonPause").gameObject.GetComponent<Button>();
+        btnPause = transform.Find("ButtonPause").GetComponent<Button>();
         btnPause.onClick.AddListener(OnClickButtonPause);
         btnPause.gameObject.SetActive(false);
 
