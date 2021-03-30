@@ -11,6 +11,7 @@ UnityGenerated/
 Library/
 UserSettings/
 Assets/AssetStoreTools*
+*.meta
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
