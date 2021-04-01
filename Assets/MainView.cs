@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GoogleMobileAds.Api;
 
 public class MainView : MonoBehaviour
 {
@@ -15,6 +16,16 @@ public class MainView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MobileAds.Initialize(initStatus => { });
+
+        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+
+        BannerView bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the banner with the request.
+        bannerView.LoadAd(request);
+
         score = transform.Find("TextScore").GetComponent<Text>();
 
         btnPlay = transform.Find("ButtonPlay").GetComponent<Button>();

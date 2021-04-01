@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{E3EF6E53-88BE-20EB-65C7-C65330B49779}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,12 +57,98 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\NativeAdType.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\DisplayMetrics.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RequestConfigurationClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IRewardedInterstitialAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IRewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\AdLoaderClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\InitializationStatusDummyClient.cs" />
     <Compile Include="Assets\Colum.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdapterStatus.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\GoogleMobileAdsClientFactory.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\InterstitialClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\InitializationStatusClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Mediation\MediationExtras.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\DummyClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\MobileAds.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\Reward.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\MobileAdsClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\RewardingAdBaseClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\Utils.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\CustomNativeTemplateAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IInterstitialClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\ResponseInfoDummyClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\BannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IResponseInfoClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\MobileAdsEventExecutor.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\RewardedAd.cs" />
     <Compile Include="Assets\Controller.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\ResponseInfoClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\DummyAdBehaviour.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\RequestConfiguration.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\AdLoaderClientArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IAdLoaderClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\BannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdValueEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\InterstitialClient.cs" />
     <Compile Include="Assets\MainView.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IInitializationStatusClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\ServerSideVerificationOptions.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\ResponseInfoClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\CustomNativeClientEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MobileAdsClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\RewardedInterstitialAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdPosition.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\InitializationStatusClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\CustomNativeTemplateClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\GoogleMobileAdsClientFactory.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdSize.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\BannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\BannerView.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\RequestConfigurationClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\RewardBasedVideoAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\RewardedAdDummyClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\InterstitialClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\Utils.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\TagForUnderAgeOfConsent.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\InterstitialAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\CustomNativeTemplateClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\ResponseInfo.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Externs.cs" />
     <Compile Include="Assets\SpawnPoint.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdRequest.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IRewardBasedVideoAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\RewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdValue.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IBannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdErrorEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\CustomNativeEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\MaxAdContentRating.cs" />
     <Compile Include="Assets\Hitted.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\Gender.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardedInterstitialAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\TagForChildDirectedTreatment.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IMobileAdsClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\RewardBasedVideoAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\AdLoaderClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\Countdown.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\BaseAdDummyClient.cs" />
     <Compile Include="Assets\Bird.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\InitializationStatus.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IClientFactory.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\ButtonBehaviour.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\RewardedInterstitialAdDummyClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\RewardedInterstitialAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Core\AdFailedToLoadEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\RewardedInterstitialAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Unity\RewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\ICustomNativeTemplateClient.cs" />
     <None Include="Assets\Res\atlas.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Program Files/Unity/Editor/2020.3.0f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -723,18 +810,6 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>E:/unity_project/FlappyBird/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="GoogleMobileAds.csproj">
-      <Project>{B1ABD968-2ABA-8269-A240-F0C4509E0143}</Project>
-      <Name>GoogleMobileAds</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="GoogleMobileAds.Editor.csproj">
-      <Project>{4ECA6068-A0ED-BCE9-8857-E61D2C1903D4}</Project>
-      <Name>GoogleMobileAds.Editor</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
