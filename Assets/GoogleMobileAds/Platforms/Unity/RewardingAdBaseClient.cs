@@ -77,7 +77,7 @@ namespace GoogleMobileAds.Unity
                 {
                     OnAdDidDismissFullScreenContent.Invoke(this, EventArgs.Empty);
                 }
-                AdBehaviour.ResumeGame();
+                //AdBehaviour.ResumeGame();
                 if (OnUserEarnedReward != null)
                 {
                     OnUserEarnedReward.Invoke(this, GetRewardItem());

@@ -62,7 +62,7 @@ namespace GoogleMobileAds.Unity
                 {
                     OnAdClosed.Invoke(this, new EventArgs());
                 }
-                AdBehaviour.ResumeGame();
+                //AdBehaviour.ResumeGame();
             });
         }
 

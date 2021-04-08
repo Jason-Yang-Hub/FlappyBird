@@ -24,7 +24,7 @@ public class SpawnPoint : MonoBehaviour
             nextTime = Time.time + coldDown;
 
             Vector3 p = transform.position;
-            p.y = Random.Range(-3f, 3f);
+            p.y = Random.Range(-3f, 2f);
 
             Instantiate(colum, p,transform.rotation,transform);
         }

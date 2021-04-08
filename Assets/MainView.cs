@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,18 +14,15 @@ public class MainView : MonoBehaviour
 
     private Rigidbody2D player;
 
+    private BannerView bannerView;
+    private InterstitialAd interstitial;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(initStatus => { });
-
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-
-        BannerView bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
-        // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the banner with the request.
-        bannerView.LoadAd(request);
+        RequestBanner();
 
         score = transform.Find("TextScore").GetComponent<Text>();
 
@@ -49,6 +47,49 @@ public class MainView : MonoBehaviour
         
     }
 
+    // 创建横幅广告
+    private void RequestBanner() 
+    {
+        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+
+        bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the banner with the request.
+        bannerView.LoadAd(request);
+    }
+
+    // 创建插页式广告
+    private void RequestInterstitial()
+    {
+        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+
+        // Initialize an InterstitialAd.
+        interstitial = new InterstitialAd(adUnitId);
+        // Called when an ad request has successfully loaded.
+        //interstitial.OnAdLoaded += HandleOnAdLoaded;
+        // Called when an ad request failed to load.
+        //interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        // Called when an ad is shown.
+        //interstitial.OnAdOpening += HandleOnAdOpened;
+        // Called when the ad is closed.
+
+        interstitial.OnAdClosed += HandleOnInterstitialAdClosed;
+        // Called when the ad click caused the user to leave the application.
+        //interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the interstitial with the request.
+        interstitial.LoadAd(request);
+    }
+
+    public void HandleOnInterstitialAdClosed(object sender, EventArgs args)
+    {
+        interstitial.Destroy();
+    }
+
     void OnClickButtonPlay()
     {
         btnPlay.gameObject.SetActive(false);
@@ -64,7 +105,7 @@ public class MainView : MonoBehaviour
         // 初始化
         Time.timeScale = 1;
         player.gravityScale = 0;
-        player.position = new Vector2(-3, 0);
+        player.position = new Vector2(-1.5f, 0);
 
         GameObject.Find("SpawnPoint").SendMessage("DestroyAllCloneObject");
 
@@ -80,6 +121,12 @@ public class MainView : MonoBehaviour
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
+
+            RequestInterstitial();
+            if (interstitial.IsLoaded())
+            {
+                interstitial.Show();
+            }
         }
         else if(Time.timeScale == 0)
         {

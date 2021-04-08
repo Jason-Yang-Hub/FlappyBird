@@ -14,7 +14,7 @@ public class Colum : MonoBehaviour
     void Start()
     {
         score = GameObject.Find("TextScore").GetComponent<Text>();
-        Destroy(gameObject, 15f);
+        Destroy(gameObject, 10f);
     }
 
     // Update is called once per frame
