@@ -7,6 +7,9 @@ using GoogleMobileAds.Api;
 
 public class MainView : MonoBehaviour
 {
+    public string adUnitIdBottom = "ca-app-pub-3940256099942544/6300978111";
+    public string adUnitIdPause = "ca-app-pub-3940256099942544/1033173712";
+
     private Text score;
     private Button btnPlay;
     private Button btnReset;
@@ -47,12 +50,22 @@ public class MainView : MonoBehaviour
         
     }
 
+    void OnDestroy()
+    {
+        if (bannerView != null)
+        {
+            bannerView.Destroy();
+        }
+        if (interstitial != null)
+        {
+            interstitial.Destroy();
+        }
+    }
+
     // 创建横幅广告
     private void RequestBanner() 
     {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-
-        bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
+        bannerView = new BannerView(adUnitIdBottom, AdSize.SmartBanner, AdPosition.Bottom);
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();
         // Load the banner with the request.
@@ -62,14 +75,14 @@ public class MainView : MonoBehaviour
     // 创建插页式广告
     private void RequestInterstitial()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        
 
         // Initialize an InterstitialAd.
-        interstitial = new InterstitialAd(adUnitId);
+        interstitial = new InterstitialAd(adUnitIdPause);
         // Called when an ad request has successfully loaded.
         //interstitial.OnAdLoaded += HandleOnAdLoaded;
         // Called when an ad request failed to load.
-        //interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
         // Called when an ad is shown.
         //interstitial.OnAdOpening += HandleOnAdOpened;
         // Called when the ad is closed.
@@ -83,6 +96,12 @@ public class MainView : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         interstitial.LoadAd(request);
+    }
+
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
+                            + args.Message);
     }
 
     public void HandleOnInterstitialAdClosed(object sender, EventArgs args)
